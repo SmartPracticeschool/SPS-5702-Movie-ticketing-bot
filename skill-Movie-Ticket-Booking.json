@@ -1,0 +1,805 @@
+{
+  "intents": [
+    {
+      "intent": "Book",
+      "examples": [
+        {
+          "text": "Can you book a ticket?"
+        },
+        {
+          "text": "I want to book a movie ticket"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Enquiry",
+      "examples": [
+        {
+          "text": "Can you provide me the Availability of Tickets?"
+        },
+        {
+          "text": "Can you provide me the Ticket Price?"
+        },
+        {
+          "text": "Can you Provide me with the Movie List?"
+        },
+        {
+          "text": "Can you provide with Movie Timings?"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "Good Afternoon"
+        },
+        {
+          "text": "Good Evening"
+        },
+        {
+          "text": "Good Morning"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Thank You"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Book",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "book",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Buy",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "email",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "email",
+          "patterns": [
+            "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Enquiry",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Availability of Tickets",
+          "synonyms": [
+            "Available tickets",
+            "Ticket Available"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Movie List",
+          "synonyms": [
+            "list",
+            "List of Movies",
+            "Movie list",
+            "movies"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Movie Timings",
+          "synonyms": [
+            "Movie Time",
+            "Timing",
+            "Timings"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Ticket Price",
+          "synonyms": [
+            "Amount",
+            "Money",
+            "Price "
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Greeting",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Good Afternoon",
+          "synonyms": [
+            "GA",
+            "Gud Afternoon",
+            "Gud Aftrnoon"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Evening",
+          "synonyms": [
+            "GE",
+            "Good Evng",
+            "Gud Evening"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Morning",
+          "synonyms": [
+            "GM",
+            "Gud Morning",
+            "Gud Mrng"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Hello",
+          "synonyms": [
+            "hello",
+            "hi"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Hi",
+          "synonyms": [
+            "hello",
+            "hi"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Thank You",
+          "synonyms": [
+            "Thanks",
+            "thank u",
+            "tq"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Movie-List",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Dilwale",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Gold",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Laxmi Bomb",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Rustum",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Payment",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Card",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "COD",
+          "synonyms": [
+            "Cash on Delivery"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "UPI",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "SeatingArrangement",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Balcony Gold",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Balcony Silver",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Dress Circle",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "TicketAvailable",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Availability of Tickets",
+          "synonyms": [
+            "available tickets",
+            "ticket available",
+            " Tickets available"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Timing",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "12.00 pm",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "4.00 pm",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "8.00 am",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "8.00 pm",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_10_1602338926362",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_10_1602338926362",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1602339190863",
+      "previous_sibling": "node_10_1602340431034"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_1_1602339811612",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_1_1602339811629"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "For which Movie you want to Book a Ticket"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_8_1602339192394",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1602339192465",
+      "previous_sibling": "handler_9_1602339192465"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "We accept COD, Card and UPI. What is mode of your Payment"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_10_1602339874851",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1602339874861",
+      "previous_sibling": "handler_9_1602339874861"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "How many Tickets do you want to Book"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_1_1602339811612",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1602339811629",
+      "previous_sibling": "handler_1_1602339811629"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1602488860529",
+      "context": {
+        "SeatingArrangement": "@SeatingArrangement"
+      },
+      "conditions": "@SeatingArrangement",
+      "event_name": "input",
+      "dialog_node": "handler_7_1602488860532"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Provide me with Seat arrangement: Balcony Gold or Balcony Silver or or Dress Circle"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_9_1602488860529",
+      "event_name": "focus",
+      "dialog_node": "handler_8_1602488860532",
+      "previous_sibling": "handler_7_1602488860532"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1602339192394",
+      "context": {
+        "Movie_List": "@Movie-List"
+      },
+      "conditions": "@Movie-List",
+      "event_name": "input",
+      "dialog_node": "handler_9_1602339192465"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_10_1602339874851",
+      "context": {
+        "Payment": "@Payment"
+      },
+      "conditions": "@Payment",
+      "event_name": "input",
+      "dialog_node": "handler_9_1602339874861"
+    },
+    {
+      "type": "frame",
+      "title": "Book",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank You!! Your Tickets of  $number of $SeatingArrangement of $Movie_List is booked. Please pay using $Payment . "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Book && @Book:Buy || @Book:book",
+      "dialog_node": "node_10_1602338926362",
+      "previous_sibling": "node_9_1602335091555"
+    },
+    {
+      "type": "standard",
+      "title": "Deleting Context",
+      "output": {
+        "deleted": "<?context.remove('Movie_List')?><?context.remove('SeatingArrangement')?><?context.remove('number')?><?context.remove('Payment')?><?context.remove('email')?>",
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1602338926362",
+      "conditions": "true",
+      "dialog_node": "node_10_1602340431034"
+    },
+    {
+      "type": "standard",
+      "title": "Greeting",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#Greeting || @Greeting",
+      "dialog_node": "node_7_1602334026885",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Enquiry",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#Enquiry || @Enquiry",
+      "dialog_node": "node_9_1602335091555",
+      "previous_sibling": "node_7_1602334026885"
+    },
+    {
+      "type": "standard",
+      "title": "email",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thank you for giving your mail ID. Your mail ID is $email is used for further reference."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "context": {
+        "email": "@email.literal"
+      },
+      "conditions": "@email",
+      "dialog_node": "node_9_1602774764569"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello! Welcome all! I am Movie Ticket Booking Chat Bot capable of showing List of Movies, Show Timings, Availability of Tickets, Ticket Prices and Booking Tickets. How may I help you? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1602334026885",
+      "conditions": "@Greeting:Hello",
+      "dialog_node": "response_1_1602506454750",
+      "previous_sibling": "response_3_1602334170633"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Afternoon"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1602334026885",
+      "conditions": "@Greeting:(Good Afternoon)",
+      "dialog_node": "response_2_1602334147108",
+      "previous_sibling": "response_8_1602334058634"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Evening"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1602334026885",
+      "conditions": "@Greeting:(Good Evening)",
+      "dialog_node": "response_3_1602334170633",
+      "previous_sibling": "response_2_1602334147108"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "HI! Welcome all! I am Movie Ticket Booking Chat Bot capable of showing List of Movies, Show Timings, Availability of Tickets, Ticket Prices and Booking Tickets. How may I help you? "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1602334026885",
+      "conditions": "@Greeting:Hi",
+      "dialog_node": "response_3_1602506513481",
+      "previous_sibling": "response_1_1602506454750"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "8.00 am , 12.00 pm, 4.00 pm, 8.00 pm"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "parent": "node_9_1602335091555",
+      "conditions": "@Enquiry:(Movie Timings)",
+      "dialog_node": "response_5_1602336279654",
+      "previous_sibling": "response_8_1602335115557"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yes, Tickets are available"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1602335091555",
+      "conditions": "@Enquiry:(Availability of Tickets)",
+      "dialog_node": "response_5_1602759597112",
+      "previous_sibling": "response_8_1602336387635"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1602334026885",
+      "conditions": "@Greeting:(Thank You)",
+      "dialog_node": "response_7_1602760658266",
+      "previous_sibling": "response_3_1602506513481"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Morning"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1602334026885",
+      "conditions": "@Greeting:(Good Morning)",
+      "dialog_node": "response_8_1602334058634"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Laxmi Bomb, Gold, Rustum, Dilwale"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1602335091555",
+      "conditions": "@Enquiry:(Movie List)",
+      "dialog_node": "response_8_1602335115557"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Balcony-200 rs. ,Balcony Silver-Rs. 150, DressCircle-100 rs."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_9_1602335091555",
+      "conditions": "@Enquiry:(Ticket Price)",
+      "dialog_node": "response_8_1602336387635",
+      "previous_sibling": "response_5_1602336279654"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1602338926362",
+      "variable": "$Payment",
+      "dialog_node": "slot_10_1602339874851",
+      "previous_sibling": "slot_1_1602339811612"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1602338926362",
+      "variable": "$number",
+      "dialog_node": "slot_1_1602339811612",
+      "previous_sibling": "slot_9_1602488860529"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1602338926362",
+      "variable": "$Movie_List",
+      "dialog_node": "slot_8_1602339192394",
+      "previous_sibling": "handler_1_1602339190863"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1602338926362",
+      "variable": "$SeatingArrangement",
+      "dialog_node": "slot_9_1602488860529",
+      "previous_sibling": "slot_8_1602339192394"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Welcome all! I am Movie Ticket Booking Chat Bot capable of showing List of Movies, Show Timings, Availability of Tickets, Ticket Prices and Booking Tickets. How may I help you? \nCan you please provide your Name and Email ID?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Movie Ticket Booking",
+  "language": "en",
+  "description": ""
+}
